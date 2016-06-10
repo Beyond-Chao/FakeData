@@ -24,14 +24,14 @@ a method to generates fake data for you on both iOS and Andriod platform
 
 * [MOCK](http://mockjs.com)
 
-在项目中需要引入一个插件代码，![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/pluginCode.png =500x320)这样就可以拦截Ajax的请求，MOCK就可以为你生成一些符合规则的假数据了。
+在项目中需要引入一个插件代码，![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/pluginCode.png)这样就可以拦截Ajax的请求，MOCK就可以为你生成一些符合规则的假数据了。
 
 ### 移动端解决方案  
-移动端开发过程中除了需要使用[Rap](https://github.com/thx/RAP) 和 [MOCK](http://mockjs.com)工具外，还有一个很强大工具[Charles](https://www.charlesproxy.com)，这里我们用到一个很牛X的Map功能，Map 功能分Map Remote 和 Map Local 两种，顾名思义，Map Remote 是将指定的网络请求重定向到另一个网址请求地址，**Map Local** 是将指定的网络请求重定向到本地文件，让你可以达到轻松修改服务器返回的内容，不管后台有没有数据返回，我们都能请求到数据，这样就减少了对后台服务的依赖。现在只要保证与该请求对应的本地文件有数据，这次的网络请求就会有数据返回。一般情况返回的都是json格式的数据(XML同理)，现在我们在本地编写一个简单的json格式的文件，不妨叫boxList.json，那[Charles](https://www.charlesproxy.com)是如何映射的呢，很简单在菜单`Tools` -> `Map Local` 然后点击`Add` ，之后的操作按图说话![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/mapLocal.png =590x500)
+移动端开发过程中除了需要使用[Rap](https://github.com/thx/RAP) 和 [MOCK](http://mockjs.com)工具外，还有一个很强大工具[Charles](https://www.charlesproxy.com)，这里我们用到一个很牛X的Map功能，Map 功能分Map Remote 和 Map Local 两种，顾名思义，Map Remote 是将指定的网络请求重定向到另一个网址请求地址，**Map Local** 是将指定的网络请求重定向到本地文件，让你可以达到轻松修改服务器返回的内容，不管后台有没有数据返回，我们都能请求到数据，这样就减少了对后台服务的依赖。现在只要保证与该请求对应的本地文件有数据，这次的网络请求就会有数据返回。一般情况返回的都是json格式的数据(XML同理)，现在我们在本地编写一个简单的json格式的文件，不妨叫boxList.json，那[Charles](https://www.charlesproxy.com)是如何映射的呢，很简单在菜单`Tools` -> `Map Local` 然后点击`Add` ，之后的操作按图说话![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/mapLocal.png)
 
-现在映射建立好了，那如何生成一个符合项目约定的json文件呢，这个时候[Rap](https://github.com/thx/RAP) 和 [MOCK](http://mockjs.com)就派上用场了，打开[Rap可视化界面](http://rap.taobao.org/org/index.do)登录之后创建一个项目，当然要是你们公司使用的就是它，拿这些都可以省略。进入该项目，进入编辑模式编写相关接口和字段，**必须和你公司接口文档最好保持一致，比如mag、status、data，然后data里面才是真正想要的数据，这种结构最好一致、这样可以轻松过渡、对接到你公司的后台服务** 然后自定义一些mock规则，随机生成想要的数据。完成后的效果是这样![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/APIDetail.png =590x500)
+现在映射建立好了，那如何生成一个符合项目约定的json文件呢，这个时候[Rap](https://github.com/thx/RAP) 和 [MOCK](http://mockjs.com)就派上用场了，打开[Rap可视化界面](http://rap.taobao.org/org/index.do)登录之后创建一个项目，当然要是你们公司使用的就是它，拿这些都可以省略。进入该项目，进入编辑模式编写相关接口和字段，**必须和你公司接口文档最好保持一致，比如mag、status、data，然后data里面才是真正想要的数据，这种结构最好一致、这样可以轻松过渡、对接到你公司的后台服务** 然后自定义一些mock规则，随机生成想要的数据。完成后的效果是这样![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/APIDetail.png)
 
-可以通过点击上方的mock来生成json数据如图![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/previewContent.png =590x500)，这个json就可以copy过来放到boxList.json文件中了，至此json数据也很快获取到了。之后就可通过模拟器请求该接口，获取数据了。当然也可以通过浏览器请求了。真机上想要访问的话，得手动设置下HTTP代理，这和通过Charles抓取手机数据请求的设置一样。
+可以通过点击上方的mock来生成json数据如图![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/previewContent.png)，这个json就可以copy过来放到boxList.json文件中了，至此json数据也很快获取到了。之后就可通过模拟器请求该接口，获取数据了。当然也可以通过浏览器请求了。真机上想要访问的话，得手动设置下HTTP代理，这和通过Charles抓取手机数据请求的设置一样。
 
 **Advantage**
 
@@ -50,7 +50,7 @@ a method to generates fake data for you on both iOS and Andriod platform
 
 **LearnMore**
 
-更多接口编辑的mock规则如图![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/mockRegulation.png =590x500)
+更多接口编辑的mock规则如图![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/mockRegulation.png)
 更多详细的用法可以参数[Rap](https://github.com/thx/RAP)和[Rap用户手册](https://github.com/thx/RAP/wiki/user_manual_cn)
 
 Charles的更多用法: [Charles 从入门到精通](http://blog.devtang.com/2015/11/14/charles-introduction/)
