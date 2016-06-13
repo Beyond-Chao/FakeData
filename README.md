@@ -20,11 +20,36 @@ a method to generates fake data for you on both iOS and Andriod platform
 ### 前端的解决方案
 * [Rap](https://github.com/thx/RAP)
 
-有的公司的后台接口管理平台用的就是rap，它是阿里的前端团队开源的Web接口管理工具,可以MOCK规则来自动生成随机数据
+有的公司的后台接口管理平台用的就是rap，它是阿里的前端团队开源的Web接口管理工具,可以MOCK规则来自动生成随机数据。
 
 * [MOCK](http://mockjs.com)
 
-在项目中需要引入一个插件代码，![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/pluginCode.png)这样就可以拦截Ajax的请求，MOCK就可以为你生成一些符合规则的假数据了。
+[Rap](https://github.com/thx/RAP)提供了```Mock插件```，暂时只支持[jQuery](https://github.com/jquery/jquery) 和 [Kissy](https://github.com/kissyteam/kissy)
+
+在项目中需要引入一个插件代码，获取该插件代码的方式如图：
+![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/pluginCode.png)
+
+**使用方式：**
+
+将以下代码写在[Kissy](https://github.com/kissyteam/kissy)或[jQuery](https://github.com/jquery/jquery)代码之后即可：
+
+```
+	<script type="text/javascript" src="http://{{domainName}}/rap.plugin.js?	projectId={{projectId}}&mode={{mode}}"></script>
+```
+
+* `{{projectId}}`为用户所编辑的接口在RAP中的项目ID
+* `{{mode}}`为RAP路由的工作模式, 默认值为3
+这样就可以拦截Ajax的请求，MOCK就可以为你生成一些符合规则的假数据了。
+* `{disableLog}}`为true时会禁止向控制台输出log，仅保留必要部分，默认为false
+
+mode不同值的具体含义如下:
+
+* 0 - 不拦截
+* 1 - 拦截全部
+* 2 - 黑名单中的项不拦截
+* 3 - 仅拦截白名单中的项
+
+具体详见[Mock插件](https://github.com/thx/RAP/wiki/user_manual_cn#mock插件)
 
 ### 移动端解决方案  
 移动端开发过程中除了需要使用[Rap](https://github.com/thx/RAP) 和 [MOCK](http://mockjs.com)工具外，还有一个很强大工具[Charles](https://www.charlesproxy.com)，这里我们用到一个很牛X的Map功能，Map 功能分Map Remote 和 Map Local 两种，顾名思义，Map Remote 是将指定的网络请求重定向到另一个网址请求地址，**Map Local** 是将指定的网络请求重定向到本地文件，让你可以达到轻松修改服务器返回的内容，不管后台有没有数据返回，我们都能请求到数据，这样就减少了对后台服务的依赖。现在只要保证与该请求对应的本地文件有数据，这次的网络请求就会有数据返回。一般情况返回的都是json格式的数据(XML同理)，现在我们在本地编写一个简单的json格式的文件，不妨叫boxList.json，那[Charles](https://www.charlesproxy.com)是如何映射的呢，很简单在菜单`Tools` -> `Map Local` 然后点击`Add` ，之后的操作按图说话![img](https://raw.githubusercontent.com/Beyond-Chao/FakeData/master/images/mapLocal.png)
