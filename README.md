@@ -71,6 +71,18 @@ mode不同值的具体含义如下:
 3. 内外网都可以访问，不用担心公司内网的限制
 4. 可以轻松对接，不用更改任何东西。当和后台联调时，你只需关闭Charles的 Map Local 功能就OK了
 
+
+**Disadvantage**
+
+* 每个开发者都必须在本地保存一份与该接口对应的json文件，否则要访问其他模块，结果没有设置映射地址、本地也没有该模块接口对应的json，所以无法获取到数据，不利于团队共享。
+
+```
+opinion：
+搭建一个专门的映射服务器(测服)，用来维护每个接口对应的json数据，只需维护一份供团队共享。
+
+```
+
+
 **Attention**
 
 在用[Charles](https://www.charlesproxy.com)的时候不要打开一些翻墙代理，比如 [Lantern](https://github.com/getlantern/lantern) 或者 [shadowsocks](https://github.com/shadowsocks), 否则 [Charles](https://www.charlesproxy.com) 无法正常工作。
