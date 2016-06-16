@@ -96,7 +96,7 @@ mode不同值的具体含义如下:
 * CGIHTTPServer: 包含处理POST请求和执行CGIHTTPRequestHandler类。
 
 
-**Advanced**
+**Medium**
 
 [使用python的Flask实现一个RESTful API服务器端](http://www.cnblogs.com/vovlie/p/4178077.html)
 
@@ -105,7 +105,7 @@ mode不同值的具体含义如下:
 [一起写一个 Web 服务器](http://python.jobbole.com/81524/)
 
 
-**Further**
+**Advanced**
 
 [一个开源的json服务器](https://github.com/typicode/json-server)
 
