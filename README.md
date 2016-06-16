@@ -76,10 +76,45 @@ mode不同值的具体含义如下:
 
 * 每个开发者都必须在本地保存一份与该接口对应的json文件，否则要访问其他模块，结果没有设置映射地址、本地也没有该模块接口对应的json，所以无法获取到数据，不利于团队共享。
 
-```
-opinion：
-搭建一个专门的映射服务器(测服)，用来维护每个接口对应的json数据，只需维护一份供团队共享。
-```
+	***plan：***搭建一个专门的映射服务器(测服)，用来维护每个接口对应的json数据，只需维护一份供团队共享。
+
+
+**Preliminary** 
+
+用Python搭建一个`简单的`本地的web服务器
+利用Python自带的包可以建立简单的web服务器。在命令行工具里cd到准备做服务器根目录的路径下，输入命令：
+
+* python -m `Web服务器模块` [端口号，默认8000]
+例如：
+*  `python -m SimpleHTTPServer 8080`
+*  就可以通过`http://localhost:8080`，访问了。其他机器也可以通过`服务器的IP地址`来访问。
+
+这里的“Web服务器模块”有如下三种：
+
+* BaseHTTPServer: 提供基本的Web服务和处理器类，分别是HTTPServer和BaseHTTPRequestHandler。
+* SimpleHTTPServer: 包含执行GET和HEAD请求的SimpleHTTPRequestHandler类。
+* CGIHTTPServer: 包含处理POST请求和执行CGIHTTPRequestHandler类。
+
+
+**Advanced**
+
+[使用python的Flask实现一个RESTful API服务器端](http://www.cnblogs.com/vovlie/p/4178077.html)
+
+[使用flask开发RESTful架构的api服务器端系列](http://www.mrhaoting.com/?p=177)
+
+[一起写一个 Web 服务器](http://python.jobbole.com/81524/)
+
+
+**Further**
+
+[一个开源的json服务器](https://github.com/typicode/json-server)
+
+[Designing a RESTful API with Python and Flask](http://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask)
+	[翻译版本](http://www.pythondoc.com/flask-restful/first.html)
+	
+[Implementing a RESTful Web API with Python & Flask](http://blog.luisrei.com/articles/flaskrest.html)
+
+[Build an API under 30 lines of code with Python and Flask](https://impythonist.wordpress.com/2015/07/12/build-an-api-under-30-lines-of-code-with-python-and-flask/)
 
 
 **Attention**
