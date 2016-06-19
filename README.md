@@ -127,7 +127,24 @@ mode不同值的具体含义如下:
 
 4. 最后： `flask/bin/pip install flask` 。注意这个pip 命令是在`flask/bin` 目录下的
 
-一切准备就绪了，之后就可以酣畅淋漓的coding了。
+
+一切准备就绪了，之后就可以酣畅淋漓的coding了。如何运行你编写的demo呢？两种方法
+
+*	 修改文件的权限 比如app.py 文件。`chmod a+x app.py` 然后 `./app.py` 运行
+*	 或者是通过`flask/bin/python app.py` 直接运行
+
+两种方法运行成功的标志是，控制台输出，以下信息。
+
+  	 *Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ 
+ 	 *Restarting with stat
+ 
+  	 *Debugger is active!
+ 
+ 	 *Debugger pin code: 142-409-214
+
+之后就可以在浏览器中输入`http://localhost:5000` 查看结果了，默认端口号是5000
+
 
 **Attention**
 
