@@ -117,6 +117,18 @@ mode不同值的具体含义如下:
 [Build an API under 30 lines of code with Python and Flask](https://impythonist.wordpress.com/2015/07/12/build-an-api-under-30-lines-of-code-with-python-and-flask/)
 
 
+**Flask的安装和虚拟环境的搭建**
+
+1. Mac 自带的Python版本是 2.7，不支持[pip](https://pypi.python.org/pypi/pip/)来下载安装包，当然也可以去官网下载安装。我采用easy_install的来安装
+
+2. 在终端中输入命令: `sudo easy_install virtualenv` ，输入密码，开始安装
+
+3. virtualenv安装好之后，输入：`virtualenv flask` 。安装一个Flask的虚拟环境
+
+4. 最后： `flask/bin/pip install flask` 。注意这个pip 命令是在`flask/bin` 目录下的
+
+一切准备就绪了，之后就可以酣畅淋漓的coding了。
+
 **Attention**
 
 在用[Charles](https://www.charlesproxy.com)的时候不要打开一些翻墙代理，比如 [Lantern](https://github.com/getlantern/lantern) 或者 [shadowsocks](https://github.com/shadowsocks), 否则 [Charles](https://www.charlesproxy.com) 无法正常工作。
